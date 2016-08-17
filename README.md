@@ -1,4 +1,4 @@
-Recipe Book Project Build [non-compiled]
+Recipe Book Project Build [non-compiled] [RC5]
 
 ###In order to run this code on your local computer there are a few easy steps:
 
