@@ -30,6 +30,7 @@ var barrels = [
     'app/shared',
     'app/recipes',
     'app/recipes/recipe-list',
+    'app/recipes/recipe-detail',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {
