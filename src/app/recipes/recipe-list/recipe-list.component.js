@@ -6,8 +6,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
+var recipe_1 = require("../recipe");
 var RecipeListComponent = (function () {
     function RecipeListComponent() {
+        this.recipes = [];
+        this.recipe = new recipe_1.Recipe('Dummy is the name', 'This is the description for Dummy', 'https://pbs.twimg.com/profile_images/1620149654/avatar.jpg');
     }
     RecipeListComponent.prototype.ngOnInit = function () {
     };

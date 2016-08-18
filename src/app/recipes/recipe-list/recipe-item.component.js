@@ -11,6 +11,9 @@ var RecipeItemComponent = (function () {
     }
     RecipeItemComponent.prototype.ngOnInit = function () {
     };
+    __decorate([
+        core_1.Input()
+    ], RecipeItemComponent.prototype, "recipe");
     RecipeItemComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
