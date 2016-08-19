@@ -14,12 +14,14 @@ var recipes_1 = require("./recipes");
 var recipe_list_1 = require("./recipes/recipe-list");
 var recipe_list_2 = require("./recipes/recipe-list");
 var recipe_detail_1 = require("./recipes/recipe-detail");
+var shopping_list_1 = require("./shopping-list");
+var shopping_list_2 = require("./shopping-list");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            declarations: [app_component_1.AppComponent, header_component_1.HeaderComponent, recipes_1.RecipesComponent, recipe_list_1.RecipeListComponent, recipe_list_2.RecipeItemComponent, recipe_detail_1.RecipeDetailComponent],
+            declarations: [app_component_1.AppComponent, header_component_1.HeaderComponent, recipes_1.RecipesComponent, recipe_list_1.RecipeListComponent, recipe_list_2.RecipeItemComponent, recipe_detail_1.RecipeDetailComponent, shopping_list_1.ShoppingListComponent, shopping_list_2.ShoppingListAddComponent],
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
             bootstrap: [app_component_1.AppComponent]
         })

@@ -7,10 +7,13 @@ import { RecipesComponent } from "./recipes";
 import { RecipeListComponent } from "./recipes/recipe-list"
 import { RecipeItemComponent } from "./recipes/recipe-list"
 import { RecipeDetailComponent } from "./recipes/recipe-detail"
+import {ShoppingListComponent} from "./shopping-list";
+import {ShoppingListAddComponent} from "./shopping-list";
+
 
 
 @NgModule({
-	declarations: [AppComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeItemComponent, RecipeDetailComponent],
+	declarations: [AppComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeItemComponent, RecipeDetailComponent, ShoppingListComponent, ShoppingListAddComponent],
 	imports: [BrowserModule, FormsModule ],
 	bootstrap: [AppComponent]
 })
