@@ -12,4 +12,4 @@ Recipe Book Project Build [non-compiled] [RC5]
 ![ng_serve](https://cloud.githubusercontent.com/assets/4675174/17707955/b8c06020-63b0-11e6-8df1-44f142bca7bf.png)
 ###You will now have a compiled project hosted on a local development server
 The compiled files will be located in the newly created "dist" directory.<br>
-The contents of the "dist" directory can be directly deployed to a web server.
+
