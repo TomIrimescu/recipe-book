@@ -9,9 +9,11 @@ var core_1 = require('@angular/core');
 var recipe_1 = require("../recipe");
 var RecipeListComponent = (function () {
     function RecipeListComponent() {
-        this.recipes = [];
+        this.recipes = [
+            new recipe_1.Recipe('Schnitzel', 'Very tasty', 'http://images.derberater.de/files/imagecache/456xXXX_berater/berater/slides/WienerSchnitzel.jpg', []),
+            new recipe_1.Recipe('Summer Salad', 'Okayish', 'http://ohmyveggies.com/wp-content/uploads/2013/06/the_perfect_summer_salad.jpg', [])
+        ];
         this.recipeSelected = new core_1.EventEmitter();
-        this.recipe = new recipe_1.Recipe('Dummy Recipe', 'This is the description', 'https://pbs.twimg.com/profile_images/1620149654/avatar.jpg');
     }
     RecipeListComponent.prototype.ngOnInit = function () {
     };

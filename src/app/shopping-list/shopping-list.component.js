@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var ShoppingListComponent = (function () {
     function ShoppingListComponent() {
+        this.items = [];
     }
     ShoppingListComponent.prototype.ngOnInit = function () {
     };
