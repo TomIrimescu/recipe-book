@@ -4,4 +4,5 @@ function __export(m) {
 }
 __export(require('./shopping-list.component'));
 __export(require('./shopping-list-add.component'));
+__export(require('./shopping-list.service'));
 //# sourceMappingURL=index.js.map

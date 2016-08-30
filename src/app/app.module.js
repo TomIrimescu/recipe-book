@@ -17,6 +17,8 @@ var recipe_detail_1 = require("./recipes/recipe-detail");
 var shopping_list_1 = require("./shopping-list");
 var shopping_list_2 = require("./shopping-list");
 var dropdown_directive_1 = require("./dropdown.directive");
+var recipes_2 = require("./recipes");
+var shopping_list_service_1 = require("./shopping-list/shopping-list.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,7 +26,8 @@ var AppModule = (function () {
         core_1.NgModule({
             declarations: [app_component_1.AppComponent, header_component_1.HeaderComponent, recipes_1.RecipesComponent, recipe_list_1.RecipeListComponent, recipe_list_2.RecipeItemComponent, recipe_detail_1.RecipeDetailComponent, shopping_list_1.ShoppingListComponent, shopping_list_2.ShoppingListAddComponent, dropdown_directive_1.DropdownDirective],
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
+            providers: [recipes_2.RecipeService, shopping_list_service_1.ShoppingListService]
         })
     ], AppModule);
     return AppModule;
