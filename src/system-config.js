@@ -32,6 +32,7 @@ var barrels = [
     'app/recipes/recipe-list',
     'app/recipes/recipe-detail',
     'app/shopping-list',
+    'app/recipes/recipe-edit',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

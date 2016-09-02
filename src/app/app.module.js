@@ -20,6 +20,8 @@ var dropdown_directive_1 = require("./dropdown.directive");
 var recipes_2 = require("./recipes");
 var shopping_list_service_1 = require("./shopping-list/shopping-list.service");
 var app_routing_1 = require("./app.routing");
+var recipes_3 = require("./recipes");
+var recipe_edit_1 = require("./recipes/recipe-edit");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,7 +35,9 @@ var AppModule = (function () {
                 recipe_detail_1.RecipeDetailComponent,
                 shopping_list_1.ShoppingListComponent,
                 shopping_list_2.ShoppingListAddComponent,
-                dropdown_directive_1.DropdownDirective
+                dropdown_directive_1.DropdownDirective,
+                recipes_3.RecipeStartComponent,
+                recipe_edit_1.RecipeEditComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,

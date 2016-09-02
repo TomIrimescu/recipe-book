@@ -7,10 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var RecipeDetailComponent = (function () {
-    function RecipeDetailComponent(sls) {
+    function RecipeDetailComponent(sls, router) {
         this.sls = sls;
+        this.router = router;
+        this.recipeIndex = 1;
     }
     RecipeDetailComponent.prototype.ngOnInit = function () {
+    };
+    RecipeDetailComponent.prototype.onEdit = function () {
+        this.router.navigate(['/recipes', this.recipeIndex, 'edit']);
+    };
+    RecipeDetailComponent.prototype.onDelete = function () {
+        this.router.navigate(['/recipes']);
     };
     RecipeDetailComponent.prototype.onAddToShoppingList = function () {
         this.sls.addItems(this.selectedRecipe.ingredients);

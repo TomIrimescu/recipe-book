@@ -6,17 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var RecipesComponent = (function () {
-    function RecipesComponent() {
+var RecipeStartComponent = (function () {
+    function RecipeStartComponent() {
     }
-    RecipesComponent = __decorate([
+    RecipeStartComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'rb-recipes',
-            templateUrl: 'recipes.component.html'
+            selector: 'rb-recipe-start',
+            template: "\n    <h1>Please select a Recipe</h1>\n  ",
+            styles: []
         })
-    ], RecipesComponent);
-    return RecipesComponent;
+    ], RecipeStartComponent);
+    return RecipeStartComponent;
 }());
-exports.RecipesComponent = RecipesComponent;
-//# sourceMappingURL=recipes.component.js.map
+exports.RecipeStartComponent = RecipeStartComponent;
+//# sourceMappingURL=recipe-start.component.js.map
