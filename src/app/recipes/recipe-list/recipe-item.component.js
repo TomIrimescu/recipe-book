@@ -8,13 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var RecipeItemComponent = (function () {
     function RecipeItemComponent() {
-        this.recipeId = 1;
     }
-    RecipeItemComponent.prototype.ngOnInit = function () {
-    };
     __decorate([
         core_1.Input()
     ], RecipeItemComponent.prototype, "recipe");
+    __decorate([
+        core_1.Input()
+    ], RecipeItemComponent.prototype, "recipeId");
     RecipeItemComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

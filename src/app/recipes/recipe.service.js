@@ -24,6 +24,12 @@ var RecipeService = (function () {
     RecipeService.prototype.getRecipes = function () {
         return this.recipes;
     };
+    RecipeService.prototype.getRecipe = function (id) {
+        return this.recipes[id];
+    };
+    RecipeService.prototype.deleteRecipe = function (recipe) {
+        this.recipes.splice(this.recipes.indexOf(recipe), 1);
+    };
     RecipeService = __decorate([
         core_1.Injectable()
     ], RecipeService);

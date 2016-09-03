@@ -7,25 +7,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var RecipeDetailComponent = (function () {
-    function RecipeDetailComponent(sls, router) {
+    function RecipeDetailComponent(sls, router, route, recipesService) {
         this.sls = sls;
         this.router = router;
-        this.recipeIndex = 1;
+        this.route = route;
+        this.recipesService = recipesService;
     }
     RecipeDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.subscription = this.route.params.subscribe(function (params) {
+            _this.recipeIndex = params['id'];
+            _this.selectedRecipe = _this.recipesService.getRecipe(_this.recipeIndex);
+        });
     };
     RecipeDetailComponent.prototype.onEdit = function () {
         this.router.navigate(['/recipes', this.recipeIndex, 'edit']);
     };
     RecipeDetailComponent.prototype.onDelete = function () {
+        this.recipesService.deleteRecipe(this.selectedRecipe);
         this.router.navigate(['/recipes']);
     };
     RecipeDetailComponent.prototype.onAddToShoppingList = function () {
         this.sls.addItems(this.selectedRecipe.ingredients);
     };
-    __decorate([
-        core_1.Input()
-    ], RecipeDetailComponent.prototype, "selectedRecipe");
+    RecipeDetailComponent.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
+    };
     RecipeDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

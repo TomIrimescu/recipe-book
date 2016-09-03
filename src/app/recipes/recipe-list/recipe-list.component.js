@@ -10,17 +10,10 @@ var RecipeListComponent = (function () {
     function RecipeListComponent(recipeService) {
         this.recipeService = recipeService;
         this.recipes = [];
-        this.recipeSelected = new core_1.EventEmitter();
     }
     RecipeListComponent.prototype.ngOnInit = function () {
         this.recipes = this.recipeService.getRecipes();
     };
-    RecipeListComponent.prototype.onSelected = function (recipe) {
-        this.recipeSelected.emit(recipe);
-    };
-    __decorate([
-        core_1.Output()
-    ], RecipeListComponent.prototype, "recipeSelected");
     RecipeListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
