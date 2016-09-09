@@ -6,11 +6,47 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
+var ingredient_1 = require("../shared/ingredient");
 var ShoppingListAddComponent = (function () {
-    function ShoppingListAddComponent() {
+    function ShoppingListAddComponent(sls) {
+        this.sls = sls;
+        this.cleared = new core_1.EventEmitter();
+        this.isAdd = true;
     }
-    ShoppingListAddComponent.prototype.ngOnInit = function () {
+    ShoppingListAddComponent.prototype.ngOnChanges = function (changes) {
+        if (changes.item.currentValue === null) {
+            this.isAdd = true;
+            this.item = { name: null, amount: null };
+        }
+        else {
+            this.isAdd = false;
+        }
     };
+    ShoppingListAddComponent.prototype.onSubmit = function (ingredient) {
+        var newIngredient = new ingredient_1.Ingredient(ingredient.name, ingredient.amount);
+        if (!this.isAdd) {
+            this.sls.editItem(this.item, newIngredient);
+            this.onClear();
+        }
+        else {
+            this.item = newIngredient;
+            this.sls.addItem(this.item);
+        }
+    };
+    ShoppingListAddComponent.prototype.onDelete = function () {
+        this.sls.deleteItem(this.item);
+        this.onClear();
+    };
+    ShoppingListAddComponent.prototype.onClear = function () {
+        this.isAdd = true;
+        this.cleared.emit(null);
+    };
+    __decorate([
+        core_1.Input()
+    ], ShoppingListAddComponent.prototype, "item");
+    __decorate([
+        core_1.Output()
+    ], ShoppingListAddComponent.prototype, "cleared");
     ShoppingListAddComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
