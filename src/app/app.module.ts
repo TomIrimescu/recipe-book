@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header.component";
@@ -17,30 +17,31 @@ import { RecipeStartComponent } from "./recipes";
 import { RecipeEditComponent } from "./recipes/recipe-edit";
 
 
-
 @NgModule({
-	declarations: [AppComponent,
-		HeaderComponent,
-		RecipesComponent,
-		RecipeListComponent,
-		RecipeItemComponent,
-		RecipeDetailComponent,
-		ShoppingListComponent,
-		ShoppingListAddComponent,
-		DropdownDirective,
-		RecipeStartComponent,
-		RecipeEditComponent
-	],
-	imports: [
-		BrowserModule,
-		FormsModule,
-		routing
-	],
-	bootstrap: [AppComponent],
-	providers: [
-		RecipeService,
-		ShoppingListService
-	]
+  declarations: [ AppComponent,
+    HeaderComponent,
+    RecipesComponent,
+    RecipeListComponent,
+    RecipeItemComponent,
+    RecipeDetailComponent,
+    ShoppingListComponent,
+    ShoppingListAddComponent,
+    DropdownDirective,
+    RecipeStartComponent,
+    RecipeEditComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    routing
+  ],
+  bootstrap: [ AppComponent ],
+  providers: [
+    RecipeService,
+    ShoppingListService
+  ]
 })
 
-export class AppModule {}
+export class AppModule {
+}

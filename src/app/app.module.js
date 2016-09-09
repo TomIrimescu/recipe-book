@@ -42,6 +42,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                forms_1.ReactiveFormsModule,
                 app_routing_1.routing
             ],
             bootstrap: [app_component_1.AppComponent],
