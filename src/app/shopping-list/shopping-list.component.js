@@ -10,9 +10,16 @@ var ShoppingListComponent = (function () {
     function ShoppingListComponent(sls) {
         this.sls = sls;
         this.items = [];
+        this.selectedItem = null;
     }
     ShoppingListComponent.prototype.ngOnInit = function () {
         this.items = this.sls.getItems();
+    };
+    ShoppingListComponent.prototype.onSelectItem = function (item) {
+        this.selectedItem = item;
+    };
+    ShoppingListComponent.prototype.onCleared = function () {
+        this.selectedItem = null;
     };
     ShoppingListComponent = __decorate([
         core_1.Component({
