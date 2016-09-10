@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var forms_1 = require("@angular/forms");
 var RecipeEditComponent = (function () {
-    function RecipeEditComponent(route, recipeService, formBuilder) {
+    function RecipeEditComponent(route, recipeService, formBuilder, router) {
         this.route = route;
         this.recipeService = recipeService;
         this.formBuilder = formBuilder;
+        this.router = router;
         this.isNew = true;
     }
     RecipeEditComponent.prototype.ngOnInit = function () {
@@ -33,8 +34,38 @@ var RecipeEditComponent = (function () {
             _this.initForm();
         });
     };
+    RecipeEditComponent.prototype.onSubmit = function () {
+        var newRecipe = this.recipeForm.value;
+        if (this.isNew) {
+            this.recipeService.addRecipe(newRecipe);
+        }
+        else {
+            this.recipeService.editRecipe(this.recipe, newRecipe);
+        }
+        this.navigateBack();
+    };
+    RecipeEditComponent.prototype.onCancel = function () {
+        this.navigateBack();
+    };
+    RecipeEditComponent.prototype.onAddItem = function (name, amount) {
+        this.recipeForm.controls['ingredients'].push(new forms_1.FormGroup({
+            name: new forms_1.FormControl(name, forms_1.Validators.required),
+            amount: new forms_1.FormControl(amount, [
+                forms_1.Validators.required,
+                forms_1.Validators.pattern("\\d+")
+            ])
+        }));
+        console.log(name);
+        console.log(amount);
+    };
+    RecipeEditComponent.prototype.onRemoveItem = function (index) {
+        this.recipeForm.controls['ingredients'].removeAt(index);
+    };
     RecipeEditComponent.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();
+    };
+    RecipeEditComponent.prototype.navigateBack = function () {
+        this.router.navigate(['../']);
     };
     RecipeEditComponent.prototype.initForm = function () {
         var recipeName = '';

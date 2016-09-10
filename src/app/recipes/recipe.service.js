@@ -30,6 +30,12 @@ var RecipeService = (function () {
     RecipeService.prototype.deleteRecipe = function (recipe) {
         this.recipes.splice(this.recipes.indexOf(recipe), 1);
     };
+    RecipeService.prototype.addRecipe = function (recipe) {
+        this.recipes.push(recipe);
+    };
+    RecipeService.prototype.editRecipe = function (oldRecipe, newRecipe) {
+        this.recipes[this.recipes.indexOf(oldRecipe)] = newRecipe;
+    };
     RecipeService = __decorate([
         core_1.Injectable()
     ], RecipeService);
