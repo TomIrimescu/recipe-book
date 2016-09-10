@@ -14,6 +14,7 @@ var RecipeEditComponent = (function () {
         this.formBuilder = formBuilder;
         this.router = router;
         this.isNew = true;
+        this.resetValueNull = null;
     }
     RecipeEditComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -55,8 +56,7 @@ var RecipeEditComponent = (function () {
                 forms_1.Validators.pattern("\\d+")
             ])
         }));
-        console.log(name);
-        console.log(amount);
+        this.resetValueNull = '';
     };
     RecipeEditComponent.prototype.onRemoveItem = function (index) {
         this.recipeForm.controls['ingredients'].removeAt(index);

@@ -24,6 +24,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
   private recipe: Recipe;
   private isNew: boolean = true;
   private subscription: Subscription;
+  private resetValueNull: string = null;
 
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService,
@@ -73,8 +74,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
           ])
         })
     );
-    console.log(name);
-    console.log(amount);
+    this.resetValueNull = '';
   }
 
   onRemoveItem(index: number){
