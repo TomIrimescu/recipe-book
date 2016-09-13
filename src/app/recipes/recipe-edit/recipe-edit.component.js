@@ -49,14 +49,19 @@ var RecipeEditComponent = (function () {
         this.navigateBack();
     };
     RecipeEditComponent.prototype.onAddItem = function (name, amount) {
-        this.recipeForm.controls['ingredients'].push(new forms_1.FormGroup({
-            name: new forms_1.FormControl(name, forms_1.Validators.required),
-            amount: new forms_1.FormControl(amount, [
-                forms_1.Validators.required,
-                forms_1.Validators.pattern("\\d+")
-            ])
-        }));
-        this.resetValueNull = '';
+        if ((name == '') || (amount == '')) {
+            return;
+        }
+        else {
+            this.recipeForm.controls['ingredients'].push(new forms_1.FormGroup({
+                name: new forms_1.FormControl(name, forms_1.Validators.required),
+                amount: new forms_1.FormControl(amount, [
+                    forms_1.Validators.required,
+                    forms_1.Validators.pattern("^[0-9]*$")
+                ])
+            }));
+            this.resetValueNull = '';
+        }
     };
     RecipeEditComponent.prototype.onRemoveItem = function (index) {
         this.recipeForm.controls['ingredients'].removeAt(index);
@@ -78,7 +83,7 @@ var RecipeEditComponent = (function () {
                     name: new forms_1.FormControl(this.recipe.ingredients[i].name, forms_1.Validators.required),
                     amount: new forms_1.FormControl(this.recipe.ingredients[i].amount, [
                         forms_1.Validators.required,
-                        forms_1.Validators.pattern("\\d+")
+                        forms_1.Validators.pattern("^[0-9]*$")
                     ])
                 }));
             }

@@ -64,17 +64,21 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     this.navigateBack();
   }
 
-  onAddItem(name: string, amount: string){
-    (<FormArray>this.recipeForm.controls['ingredients']).push(
-        new FormGroup({
-          name: new FormControl(name, Validators.required),
-          amount: new FormControl(amount, [
-            Validators.required,
-            Validators.pattern("\\d+")
-          ])
-        })
-    );
-    this.resetValueNull = '';
+  onAddItem(name: string, amount: string) {
+    if((name == '') || (amount == '')){
+      return;
+    } else{
+      (<FormArray>this.recipeForm.controls[ 'ingredients' ]).push(
+          new FormGroup({
+            name: new FormControl(name, Validators.required),
+            amount: new FormControl(amount, [
+              Validators.required,
+              Validators.pattern("^[0-9]*$")
+            ])
+          })
+      );
+      this.resetValueNull = '';
+    }
   }
 
   onRemoveItem(index: number){
@@ -102,7 +106,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
             name: new FormControl(this.recipe.ingredients[i].name, Validators.required),
             amount: new FormControl(this.recipe.ingredients[i].amount, [
                 Validators.required,
-                Validators.pattern("\\d+")
+                Validators.pattern("^[0-9]*$")
             ])
           })
         );
