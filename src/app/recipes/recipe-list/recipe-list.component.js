@@ -12,7 +12,9 @@ var RecipeListComponent = (function () {
         this.recipes = [];
     }
     RecipeListComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.recipes = this.recipeService.getRecipes();
+        this.recipeService.recipesChanged.subscribe(function (recipes) { return _this.recipes = recipes; });
     };
     RecipeListComponent = __decorate([
         core_1.Component({

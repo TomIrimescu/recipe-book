@@ -7,9 +7,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var HeaderComponent = (function () {
-    function HeaderComponent() {
+    function HeaderComponent(recipeService) {
+        this.recipeService = recipeService;
     }
-    HeaderComponent.prototype.ngOnInit = function () {
+    HeaderComponent.prototype.onStore = function () {
+        this.recipeService.storeData().subscribe(function (data) { return console.log(data); }, function (error) { return console.log(error); });
+    };
+    HeaderComponent.prototype.onFetch = function () {
+        this.recipeService.fetchData();
     };
     HeaderComponent = __decorate([
         core_1.Component({

@@ -6,10 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
+var http_1 = require("@angular/http");
 var recipe_1 = require("./recipe");
 var shared_1 = require("../shared");
 var RecipeService = (function () {
-    function RecipeService() {
+    function RecipeService(http) {
+        this.http = http;
+        this.recipesChanged = new core_1.EventEmitter();
         this.recipes = [
             new recipe_1.Recipe('Schnitzel', 'Very tasty', 'http://images.derberater.de/files/imagecache/456xXXX_berater/berater/slides/WienerSchnitzel.jpg', [
                 new shared_1.Ingredient('French Fries', 2),
@@ -35,6 +38,22 @@ var RecipeService = (function () {
     };
     RecipeService.prototype.editRecipe = function (oldRecipe, newRecipe) {
         this.recipes[this.recipes.indexOf(oldRecipe)] = newRecipe;
+    };
+    RecipeService.prototype.storeData = function () {
+        var body = JSON.stringify(this.recipes);
+        var headers = new http_1.Headers({
+            'Content-Type': 'application/json'
+        });
+        return this.http.put('https://recipebook-e34a4.firebaseio.com/recipes.json', body, { headers: headers });
+    };
+    RecipeService.prototype.fetchData = function () {
+        var _this = this;
+        return this.http.get('https://recipebook-e34a4.firebaseio.com/recipes.json')
+            .map(function (response) { return response.json(); })
+            .subscribe(function (data) {
+            _this.recipes = data;
+            _this.recipesChanged.emit(_this.recipes);
+        });
     };
     RecipeService = __decorate([
         core_1.Injectable()

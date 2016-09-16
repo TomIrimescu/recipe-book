@@ -78,14 +78,16 @@ var RecipeEditComponent = (function () {
         var recipeContent = '';
         var recipeIngredients = new forms_1.FormArray([]);
         if (!this.isNew) {
-            for (var i = 0; i < this.recipe.ingredients.length; i++) {
-                recipeIngredients.push(new forms_1.FormGroup({
-                    name: new forms_1.FormControl(this.recipe.ingredients[i].name, forms_1.Validators.required),
-                    amount: new forms_1.FormControl(this.recipe.ingredients[i].amount, [
-                        forms_1.Validators.required,
-                        forms_1.Validators.pattern("^[0-9]*$")
-                    ])
-                }));
+            if (this.recipe.hasOwnProperty('ingredients')) {
+                for (var i = 0; i < this.recipe.ingredients.length; i++) {
+                    recipeIngredients.push(new forms_1.FormGroup({
+                        name: new forms_1.FormControl(this.recipe.ingredients[i].name, forms_1.Validators.required),
+                        amount: new forms_1.FormControl(this.recipe.ingredients[i].amount, [
+                            forms_1.Validators.required,
+                            forms_1.Validators.pattern("^[0-9]*$")
+                        ])
+                    }));
+                }
             }
             recipeName = this.recipe.name;
             recipeImageUrl = this.recipe.imagePath;

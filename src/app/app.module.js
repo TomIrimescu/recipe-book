@@ -22,6 +22,7 @@ var shopping_list_service_1 = require("./shopping-list/shopping-list.service");
 var app_routing_1 = require("./app.routing");
 var recipes_3 = require("./recipes");
 var recipe_edit_1 = require("./recipes/recipe-edit");
+var http_1 = require("@angular/http");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -43,7 +44,8 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
-                app_routing_1.routing
+                app_routing_1.routing,
+                http_1.HttpModule
             ],
             bootstrap: [app_component_1.AppComponent],
             providers: [
