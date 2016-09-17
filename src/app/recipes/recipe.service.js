@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var http_1 = require("@angular/http");
+require('rxjs/Rx');
 var recipe_1 = require("./recipe");
 var shared_1 = require("../shared");
 var RecipeService = (function () {

@@ -3,7 +3,6 @@ import {Recipe} from "../recipe";
 
 
 @Component({
-  moduleId: module.id,
   selector: 'rb-recipe-item',
   templateUrl: 'recipe-item.component.html'
 })

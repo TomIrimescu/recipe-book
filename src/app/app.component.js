@@ -11,7 +11,6 @@ var AppComponent = (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'rb-root',
             templateUrl: 'app.component.html'
         })

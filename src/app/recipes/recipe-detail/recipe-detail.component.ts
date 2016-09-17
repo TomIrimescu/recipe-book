@@ -6,7 +6,6 @@ import { Subscription } from "rxjs";
 import { RecipeService } from "../recipe.service";
 
 @Component( {
-	moduleId: module.id,
 	selector: 'rb-recipe-detail',
 	templateUrl: 'recipe-detail.component.html'
 } )
