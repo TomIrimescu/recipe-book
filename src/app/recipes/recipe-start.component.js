@@ -11,7 +11,6 @@ var RecipeStartComponent = (function () {
     }
     RecipeStartComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'rb-recipe-start',
             template: "\n    <h1>Please select a Recipe</h1>\n  ",
             styles: []

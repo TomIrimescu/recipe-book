@@ -102,7 +102,6 @@ var RecipeEditComponent = (function () {
     };
     RecipeEditComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'rb-recipe-edit',
             templateUrl: 'recipe-edit.component.html',
             styles: []

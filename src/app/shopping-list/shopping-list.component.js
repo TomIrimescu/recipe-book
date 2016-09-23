@@ -23,7 +23,6 @@ var ShoppingListComponent = (function () {
     };
     ShoppingListComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'rb-shopping-list',
             templateUrl: 'shopping-list.component.html'
         })

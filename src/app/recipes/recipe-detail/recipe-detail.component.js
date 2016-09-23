@@ -35,7 +35,6 @@ var RecipeDetailComponent = (function () {
     };
     RecipeDetailComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'rb-recipe-detail',
             templateUrl: 'recipe-detail.component.html'
         })

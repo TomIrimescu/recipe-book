@@ -49,7 +49,6 @@ var ShoppingListAddComponent = (function () {
     ], ShoppingListAddComponent.prototype, "cleared");
     ShoppingListAddComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'rb-shopping-list-add',
             templateUrl: 'shopping-list-add.component.html'
         })
