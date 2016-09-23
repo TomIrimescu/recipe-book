@@ -6,16 +6,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var RecipesComponent = (function () {
-    function RecipesComponent() {
+var HomeComponent = (function () {
+    function HomeComponent() {
     }
-    RecipesComponent = __decorate([
+    HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent = __decorate([
         core_1.Component({
-            selector: 'rb-recipes',
-            templateUrl: 'recipes.component.html'
+            selector: 'app-home',
+            template: "\n    <h1>Welcome to the Recipe Book!</h1>\n  ",
+            styles: []
         })
-    ], RecipesComponent);
-    return RecipesComponent;
+    ], HomeComponent);
+    return HomeComponent;
 }());
-exports.RecipesComponent = RecipesComponent;
-//# sourceMappingURL=recipes.component.js.map
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=home.component.js.map

@@ -1,12 +1,10 @@
 "use strict";
 var router_1 = require('@angular/router');
-var recipes_component_1 = require("./recipes/recipes.component");
-var shopping_list_component_1 = require("./shopping-list/shopping-list.component");
-var recipes_routes_1 = require("./recipes/recipes.routes");
+var home_component_1 = require("./home.component");
 var APP_ROUTES = [
-    { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-    { path: 'recipes', component: recipes_component_1.RecipesComponent, children: recipes_routes_1.RECIPE_ROUTES },
-    { path: 'shopping-list', component: shopping_list_component_1.ShoppingListComponent }
+    { path: '', component: home_component_1.HomeComponent },
+    { path: 'recipes', loadChildren: 'app/recipes/recipes.module#RecipesModule' },
+    { path: 'shopping-list', loadChildren: 'app/shopping-list/shopping-list.module#ShoppingListModule' }
 ];
-exports.routing = router_1.RouterModule.forRoot(APP_ROUTES);
+exports.Routing = router_1.RouterModule.forRoot(APP_ROUTES);
 //# sourceMappingURL=app.routing.js.map

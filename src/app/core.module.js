@@ -5,17 +5,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var core_1 = require('@angular/core');
-var RecipesComponent = (function () {
-    function RecipesComponent() {
+var core_1 = require("@angular/core");
+var dropdown_directive_1 = require("./dropdown.directive");
+var home_component_1 = require("./home.component");
+var CoreModule = (function () {
+    function CoreModule() {
     }
-    RecipesComponent = __decorate([
-        core_1.Component({
-            selector: 'rb-recipes',
-            templateUrl: 'recipes.component.html'
+    CoreModule = __decorate([
+        core_1.NgModule({
+            declarations: [dropdown_directive_1.DropdownDirective, home_component_1.HomeComponent],
+            exports: [dropdown_directive_1.DropdownDirective]
         })
-    ], RecipesComponent);
-    return RecipesComponent;
+    ], CoreModule);
+    return CoreModule;
 }());
-exports.RecipesComponent = RecipesComponent;
-//# sourceMappingURL=recipes.component.js.map
+exports.CoreModule = CoreModule;
+//# sourceMappingURL=core.module.js.map

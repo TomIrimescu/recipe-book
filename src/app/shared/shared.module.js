@@ -5,17 +5,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var core_1 = require('@angular/core');
-var RecipesComponent = (function () {
-    function RecipesComponent() {
+var core_1 = require("@angular/core");
+var common_1 = require("@angular/common");
+var SharedModule = (function () {
+    function SharedModule() {
     }
-    RecipesComponent = __decorate([
-        core_1.Component({
-            selector: 'rb-recipes',
-            templateUrl: 'recipes.component.html'
+    SharedModule = __decorate([
+        core_1.NgModule({
+            exports: [common_1.CommonModule]
         })
-    ], RecipesComponent);
-    return RecipesComponent;
+    ], SharedModule);
+    return SharedModule;
 }());
-exports.RecipesComponent = RecipesComponent;
-//# sourceMappingURL=recipes.component.js.map
+exports.SharedModule = SharedModule;
+//# sourceMappingURL=shared.module.js.map

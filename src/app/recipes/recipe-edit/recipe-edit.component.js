@@ -70,7 +70,7 @@ var RecipeEditComponent = (function () {
         this.subscription.unsubscribe();
     };
     RecipeEditComponent.prototype.navigateBack = function () {
-        this.router.navigate(['../']);
+        this.router.navigate(['recipes']);
     };
     RecipeEditComponent.prototype.initForm = function () {
         var recipeName = '';

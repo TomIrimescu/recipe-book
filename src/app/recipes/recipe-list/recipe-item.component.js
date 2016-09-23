@@ -17,7 +17,6 @@ var RecipeItemComponent = (function () {
     ], RecipeItemComponent.prototype, "recipeId");
     RecipeItemComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'rb-recipe-item',
             templateUrl: 'recipe-item.component.html'
         })

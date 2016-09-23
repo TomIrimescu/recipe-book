@@ -1,41 +1,24 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header.component";
-import { RecipesComponent } from "./recipes";
-import { RecipeListComponent } from "./recipes/recipe-list"
-import { RecipeItemComponent } from "./recipes/recipe-list"
-import { RecipeDetailComponent } from "./recipes/recipe-detail"
-import { ShoppingListComponent } from "./shopping-list";
-import { ShoppingListAddComponent } from "./shopping-list";
-import { DropdownDirective } from "./dropdown.directive";
 import { RecipeService } from "./recipes";
 import { ShoppingListService } from "./shopping-list/shopping-list.service";
-import { routing } from "./app.routing";
-import { RecipeStartComponent } from "./recipes";
-import { RecipeEditComponent } from "./recipes/recipe-edit";
+import { Routing } from "./app.routing";
 import { HttpModule } from "@angular/http";
+import { CoreModule } from "./core.module";
 
 @NgModule({
-  declarations: [ AppComponent,
-    HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeDetailComponent,
-    ShoppingListComponent,
-    ShoppingListAddComponent,
-    DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent
+  declarations: [
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    routing,
-    HttpModule
+    Routing,
+    HttpModule,
+    CoreModule
   ],
   bootstrap: [ AppComponent ],
   providers: [

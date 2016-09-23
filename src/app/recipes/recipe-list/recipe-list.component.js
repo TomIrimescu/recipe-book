@@ -18,7 +18,6 @@ var RecipeListComponent = (function () {
     };
     RecipeListComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'rb-recipe-list',
             templateUrl: 'recipe-list.component.html'
         })
